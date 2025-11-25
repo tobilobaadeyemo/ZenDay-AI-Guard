@@ -1,11 +1,10 @@
-from flask import Flask
-from agents import LeadAgent, PlanAgent
+# main.py
+from agents import lead_agent, plan_agent
 
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "ZenDay: Your personal assistant to clear noise and prevent drift."
+def main():
+    user_input = "schedule my task"
+    action = lead_agent.lead_agent(user_input)
+    print(action)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    main()
